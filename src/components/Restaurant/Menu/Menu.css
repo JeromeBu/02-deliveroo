@@ -2,10 +2,6 @@
   padding: 20px 0;
 }
 
-.side {
-  width: 350px;
-}
-
 .items {
   flex-wrap: wrap;
 }

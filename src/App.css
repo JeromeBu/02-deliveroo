@@ -1,6 +1,8 @@
 :root {
   --deliveroo-blue: #5dccbf;
+  --border-grey: rgb(231, 231, 231);
   /* var(--deliveroo-blue); */
+  /* var(--border-grey); */
 }
 
 a {

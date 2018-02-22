@@ -8,15 +8,17 @@ class Menu extends React.Component {
     const blocks = [];
     for (const key in menu) {
       if (menu.hasOwnProperty(key)) {
-        blocks.push(
-          <MenuBlock
-            key={"id" + key}
-            title={key}
-            section={menu[key]}
-            addToCart={this.props.addToCart}
-            getNumberInCart={this.props.getNumberInCart}
-          />
-        );
+        if (menu[key].length !== 0) {
+          blocks.push(
+            <MenuBlock
+              key={"id" + key}
+              title={key}
+              section={menu[key]}
+              addToCart={this.props.addToCart}
+              getNumberInCart={this.props.getNumberInCart}
+            />
+          );
+        }
       }
     }
 

@@ -9,15 +9,15 @@ class Restaurant extends React.Component {
       <div className="background-white" key="menuInline-headers">
         <div className="container">
           <Headers restaurant={this.props.restaurant} />
-          <MenuInLineAndCart
-            titles={Object.keys(this.props.menu)}
-            cart={this.props.cart}
-            addToCart={this.props.addToCart}
-            removeFromCart={this.props.removeFromCart}
-            calcSubTot={this.props.calcSubTot}
-            deliveryPrice={this.props.deliveryPrice}
-          />
         </div>
+        <MenuInLineAndCart
+          titles={Object.keys(this.props.menu)}
+          cart={this.props.cart}
+          addToCart={this.props.addToCart}
+          removeFromCart={this.props.removeFromCart}
+          calcSubTot={this.props.calcSubTot}
+          deliveryPrice={this.props.deliveryPrice}
+        />
       </div>,
       <div className="container" key="menu">
         <Menu

@@ -1,6 +1,37 @@
+:root {
+  --menu-height: 45px;
+  /* var(--menu-height); */
+}
+.inline-menu {
+  height: var(--menu-height);
+  line-height: 45px;
+  width: 600px;
+  color: var(--deliveroo-blue);
+}
+.inline-menu-element {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#menu-and-cart {
+  border-top: 1px solid var(--border-grey);
+  width: 100%;
+  background-color: white;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.menu-spacer-active {
+  height: var(--menu-height);
+}
+
 .cart {
   position: absolute;
-  right: 180px;
+  right: 15px;
+  top: -1px;
   width: 400px;
   /* border: 1px solid rgb(88, 88, 88); */
   box-shadow: 0px 8px 12px #aaa;
@@ -17,20 +48,16 @@
 
 .validate-cart {
   background-color: #a1a1a1;
-  border-bottom: 1px solid rgb(88, 88, 88);
+  border-bottom: 1px solid var(--border-grey);
   font-size: 18px;
   color: white;
-  height: 40px;
+  height: 45px;
   line-height: 40px;
   text-align: center;
 }
 
 .validable {
   background-color: var(--deliveroo-blue);
-}
-
-.menu-spacer {
-  width: 350px;
 }
 
 .item-counter {
@@ -55,4 +82,8 @@
   display: inline-block;
   width: 65px;
   text-align: right;
+}
+
+.side {
+  width: 400px;
 }

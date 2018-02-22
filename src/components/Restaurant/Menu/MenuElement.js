@@ -2,7 +2,7 @@ import React from "react";
 
 class MenuElement extends React.Component {
   render() {
-    return <li>{this.props.title}</li>;
+    return <li className="inline-menu-element">{this.props.title}</li>;
   }
 }
 

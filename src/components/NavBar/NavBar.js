@@ -3,8 +3,8 @@ import "./NavBar.css";
 
 class NavBar extends React.Component {
   render() {
-    return (
-      <div className="navbar">
+    return [
+      <div className="navbar" key="navbar">
         <div className="container flex-container space-between">
           <img src="/logo-green.svg" alt="logo" />
           <ul className="flex-container">
@@ -18,8 +18,9 @@ class NavBar extends React.Component {
             </li>
           </ul>
         </div>
-      </div>
-    );
+      </div>,
+      <div className="spacer navbar-spacer" />
+    ];
   }
 }
 
