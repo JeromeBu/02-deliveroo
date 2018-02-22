@@ -9,7 +9,7 @@ class ItemInCart extends React.Component {
   };
   render() {
     return (
-      <li>
+      <li className="flex-container space-between">
         <span className="item-counter">
           <div onClick={this.handleClickMinus}>
             <i className="fas fa-minus-circle" />

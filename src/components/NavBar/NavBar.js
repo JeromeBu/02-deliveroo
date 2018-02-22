@@ -14,7 +14,7 @@ class NavBar extends React.Component {
             </li>
             <li>
               <i className="fas fa-shopping-cart icon" />
-              &nbsp; € {this.props.calcSubTot()}
+              &nbsp; € {this.props.calcSubTot().toFixed(2)}
             </li>
           </ul>
         </div>
