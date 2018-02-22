@@ -15,7 +15,7 @@ class Item extends React.Component {
     ) : null;
   };
   render() {
-    const num = this.props.numberInCart;
+    const num = this.props.numberInCart; //
     const item = this.props.meal;
     const { title, price, picture } = item;
     return (
@@ -25,7 +25,8 @@ class Item extends React.Component {
       >
         <div className="infos flex1">
           <h3>
-            <span className="number">{num > 0 ? num : ""}</span> {title}
+            <span className="item-number">{num > 0 ? num + " x " : ""}</span>{" "}
+            {title}
           </h3>
           <br />
           <p>Prix: {price}</p>

@@ -8,14 +8,12 @@ import Restaurant from "./components/Restaurant/Restaurant";
 
 class App extends Component {
   state = {
+    deliveryPrice: 2.5,
     cart: []
   };
 
-  getIndexOfItem(newCart, item) {
-    this.state.cart.forEach(element => {
-      newCart.push({ ...element });
-    });
-    const index = _.findIndex(newCart, function(obj) {
+  getIndexOfItem(array, item) {
+    const index = _.findIndex(array, function(obj) {
       return obj.id === item.id;
     }); // result is -1 if no match
     return index;
@@ -23,6 +21,9 @@ class App extends Component {
 
   removeFromCart = item => {
     const newCart = [];
+    this.state.cart.forEach(element => {
+      newCart.push({ ...element });
+    });
     const index = this.getIndexOfItem(newCart, item);
     newCart[index].number--;
     if (newCart[index].number === 0) {
@@ -38,6 +39,9 @@ class App extends Component {
 
   addToCart = item => {
     const newCart = [];
+    this.state.cart.forEach(element => {
+      newCart.push({ ...element });
+    });
     const index = this.getIndexOfItem(newCart, item);
     if (index >= 0) {
       newCart[index].number++;
@@ -68,11 +72,6 @@ class App extends Component {
 
   getNumberInCart = item => {
     const index = this.getIndexOfItem(this.state.cart, item);
-    console.log("Debugging getNumberInCart");
-    console.log(index);
-    console.log("Element in cart:", this.state.cart.length);
-    console.log(this.state.cart);
-
     if (index >= 0) {
       return this.state.cart[index].number;
     } else {
@@ -94,6 +93,7 @@ class App extends Component {
           cart={this.state.cart}
           calcSubTot={this.calcSubTot}
           getNumberInCart={this.getNumberInCart}
+          deliveryPrice={this.state.deliveryPrice}
         />
       </div>
     );

@@ -11,7 +11,7 @@ class MenuBlock extends React.Component {
           key={"item" + index}
           meal={meal}
           addToCart={this.props.addToCart}
-          numberInCart={() => this.props.getNumberInCart(meal)}
+          numberInCart={this.props.getNumberInCart(meal)}
         />
       );
     });

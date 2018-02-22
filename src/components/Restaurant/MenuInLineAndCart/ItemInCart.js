@@ -21,7 +21,7 @@ class ItemInCart extends React.Component {
         </span>
         <span className="item-in">{this.props.title}</span>
         <span className="item-price">
-          {(this.props.price * this.props.number).toFixed(2)}
+          € {(this.props.price * this.props.number).toFixed(2)}
         </span>
       </li>
     );

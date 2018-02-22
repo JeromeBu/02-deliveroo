@@ -1,5 +1,29 @@
+:root {
+  --nav-bar-height: 45px;
+}
+
 .navbar {
-  /* position: fixed; */
-  height: 60px;
-  background-color: antiquewhite;
+  background-color: white;
+  height: var(--nav-bar-height);
+  flex-direction: row;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  padding: 10px 0;
+}
+
+.navbar > .container {
+  height: 100%;
+}
+.navbar li {
+  line-height: var(--nav-bar-height);
+  font-size: 18px;
+  color: rgb(90, 90, 90);
+  padding: 0 10px;
+}
+.navbar .icon {
+  color: var(--deliveroo-blue);
+}
+
+.navbar img {
+  height: 100%;
+  object-fit: contain;
 }

@@ -15,6 +15,7 @@ class Restaurant extends React.Component {
             addToCart={this.props.addToCart}
             removeFromCart={this.props.removeFromCart}
             calcSubTot={this.props.calcSubTot}
+            deliveryPrice={this.props.deliveryPrice}
           />
         </div>
       </div>,

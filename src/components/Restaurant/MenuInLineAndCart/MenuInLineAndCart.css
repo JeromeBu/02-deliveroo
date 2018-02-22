@@ -2,15 +2,21 @@
   position: absolute;
   right: 180px;
   width: 400px;
-  height: 400px;
-  border: 1px solid rgb(88, 88, 88);
+  /* border: 1px solid rgb(88, 88, 88); */
+  box-shadow: 0px 8px 12px #aaa;
   border-radius: 5px;
   background-color: white;
   overflow: hidden;
 }
 
+.cart-content {
+  padding: 20px 10px;
+  line-height: 25px;
+  list-style-type: none;
+}
+
 .validate-cart {
-  background-color: #5dccbf;
+  background-color: #a1a1a1;
   border-bottom: 1px solid rgb(88, 88, 88);
   font-size: 18px;
   color: white;
@@ -18,14 +24,13 @@
   line-height: 40px;
   text-align: center;
 }
-.menu-spacer {
-  width: 350px;
+
+.validable {
+  background-color: var(--deliveroo-blue);
 }
 
-.in-card {
-  padding: 10px;
-  line-height: 25px;
-  list-style-type: none;
+.menu-spacer {
+  width: 350px;
 }
 
 .item-counter {
@@ -35,7 +40,7 @@
 
 .item-counter div {
   display: inline;
-  color: #5dccbf;
+  color: var(--deliveroo-blue);
 }
 
 .item-counter div:hover {
@@ -44,10 +49,10 @@
 
 .item-in {
   display: inline-block;
-  width: 250px;
+  width: 245px;
 }
 .item-price {
   display: inline-block;
-  width: 50px;
+  width: 65px;
   text-align: right;
 }
