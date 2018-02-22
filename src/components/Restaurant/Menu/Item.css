@@ -1,0 +1,20 @@
+.item {
+  background-color: white;
+}
+
+.item {
+  margin: 10px;
+  flex: 0 0 calc(50% - 30px);
+  display: flex;
+  min-height: 100px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.item:hover {
+  box-shadow: 0px 5px 10px rgb(107, 107, 107);
+}
+
+.item-in-cart {
+  border-left: 4px solid #5dccbf;
+}
