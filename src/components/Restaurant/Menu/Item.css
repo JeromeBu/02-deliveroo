@@ -4,23 +4,48 @@
 
 .item {
   margin: 10px;
-  border-left: 4px solid white;
   flex: 0 0 calc(50% - 30px);
-  display: flex;
   min-height: 100px;
-  padding: 5px;
+  border-radius: 5px;
+  overflow: hidden;
   box-sizing: border-box;
+}
+.item img {
+  padding: 5px;
 }
 
 .item:hover {
   box-shadow: 0px 5px 10px rgb(107, 107, 107);
 }
 
+.colored-side {
+  background-color: var(--deliveroo-blue);
+  height: 0;
+  width: 4px;
+  margin-right: 5px;
+  animation-name: green-side;
+  animation-duration: 0.5s;
+  display: none;
+}
+
+.displayed {
+}
+
 .item-in-cart {
-  border-left: 4px solid #5dccbf;
+  display: block;
+  height: 100%;
 }
 
 .item-number {
   color: #aaa;
   font-size: 14px;
+}
+
+@keyframes green-side {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }

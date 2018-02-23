@@ -20,9 +20,10 @@ class Item extends React.Component {
     const { title, price, picture } = item;
     return (
       <div
-        className={`item ${num > 0 ? "item-in-cart" : ""}`}
+        className="flex-container item"
         onClick={() => this.handleClick(item)}
       >
+        <div className={`${num > 0 ? "item-in-cart" : ""} colored-side`} />
         <div className="infos flex1">
           <h3>
             <span className="item-number">{num > 0 ? num + " x " : ""}</span>{" "}

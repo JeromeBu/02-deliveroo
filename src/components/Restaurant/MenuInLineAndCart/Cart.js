@@ -7,7 +7,7 @@ class Cart extends React.Component {
       const items = this.props.cart.map((item, index) => {
         return (
           <ItemInCart
-            key={index}
+            key={`${index}`}
             title={item.title}
             price={item.price}
             number={item.number}

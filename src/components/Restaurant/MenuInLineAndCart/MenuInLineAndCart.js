@@ -4,25 +4,27 @@ import MenuInLine from "./MenuInLine";
 import Cart from "./Cart";
 
 class MenuInLineAndCart extends React.Component {
-  componentDidMount() {
-    // Get the navbar
-    const menuBar = document.getElementById("menu-and-cart");
-    const menuSpacer = document.getElementById("menu-spacer");
-    // Get the offset position of the navbar
-    const sticky = menuBar.offsetTop;
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {
-      if (window.pageYOffset >= sticky) {
-        menuBar.classList.add("sticky");
-        menuSpacer.classList.add("menu-spacer-active");
-      } else {
-        menuBar.classList.remove("sticky");
-        menuSpacer.classList.remove("menu-spacer-active");
-      }
-    };
+  handleScroll = () => {
+    if (window.pageYOffset >= this.sticky) {
+      this.menuBar.classList.add("sticky");
+      this.menuSpacer.classList.add("menu-spacer-active");
+    } else {
+      this.menuBar.classList.remove("sticky");
+      this.menuSpacer.classList.remove("menu-spacer-active");
+    }
+  };
 
-    window.addEventListener("scroll", function() {});
+  componentDidMount() {
+    this.menuBar = document.getElementById("menu-and-cart");
+    this.menuSpacer = document.getElementById("menu-spacer");
+    this.sticky = this.menuBar.offsetTop;
+    window.addEventListener("scroll", this.handleScroll);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   render() {
     return [
       <div id="menu-spacer" key="menu-spacer" />,

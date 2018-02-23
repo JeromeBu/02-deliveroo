@@ -9,20 +9,22 @@ class ItemInCart extends React.Component {
   };
   render() {
     return (
-      <li className="flex-container space-between">
-        <span className="item-counter">
-          <div onClick={this.handleClickMinus}>
-            <i className="fas fa-minus-circle" />
-          </div>
-          &nbsp; {this.props.number} &nbsp;
-          <div onClick={this.handleClickPlus}>
-            <i className="fas fa-plus-circle" />
-          </div>
-        </span>
-        <span className="item-in">{this.props.title}</span>
-        <span className="item-price">
-          € {(this.props.price * this.props.number).toFixed(2)}
-        </span>
+      <li className="overflow-hidden">
+        <div className="flex-container space-between cart-item">
+          <span className="item-counter">
+            <div onClick={this.handleClickMinus}>
+              <i className="fas fa-minus-circle" />
+            </div>
+            &nbsp; {this.props.number} &nbsp;
+            <div onClick={this.handleClickPlus}>
+              <i className="fas fa-plus-circle" />
+            </div>
+          </span>
+          <span className="item-in">{this.props.title}</span>
+          <span className="item-price">
+            € {(this.props.price * this.props.number).toFixed(2)}
+          </span>
+        </div>
       </li>
     );
   }
