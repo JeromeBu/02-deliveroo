@@ -35,7 +35,10 @@
   display: block;
   height: 100%;
 }
-
+/* .spacer-colored {
+  width: 4px;
+  margin-right: 5px;
+} */
 .item-number {
   color: #aaa;
   font-size: 14px;
