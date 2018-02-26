@@ -9,7 +9,7 @@ class NavBar extends React.Component {
           <img src="/logo-green.svg" alt="logo" />
           <ul className="flex-container">
             <li>
-              <i class="fas fa-user icon" />
+              <i className="fas fa-user icon" />
               &nbsp; Jérôme Burkard
             </li>
             <li>
@@ -19,7 +19,7 @@ class NavBar extends React.Component {
           </ul>
         </div>
       </div>,
-      <div className="spacer navbar-spacer" />
+      <div className="spacer navbar-spacer" key="navbar-spacer" />
     ];
   }
 }

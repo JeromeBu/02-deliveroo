@@ -1,0 +1,22 @@
+.right-side {
+  width: 400px;
+  background-color: beige;
+}
+.shipping-form {
+  padding: 20px;
+  background-color: white;
+}
+
+.shipping-form p {
+  text-align: center;
+}
+
+.input-block {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.input-block input,
+.input-block label {
+  width: 100%;
+}

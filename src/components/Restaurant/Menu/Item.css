@@ -29,6 +29,7 @@
 }
 
 .displayed {
+  display: block;
 }
 
 .item-in-cart {

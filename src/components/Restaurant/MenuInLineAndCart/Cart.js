@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ItemInCart from "./ItemInCart";
+// import Shipping from "../../Shipping";
 
 class Cart extends React.Component {
   renderCartContent() {
@@ -22,7 +24,7 @@ class Cart extends React.Component {
       return (
         <div className="cart-content">
           {items}
-          {items.length > 0 ? <hr /> : null}
+          <hr />
           <div className="totals">
             <p>Sous-total: € {subTot.toFixed(2)}</p>
             <p>Frais de livraison: € {deliveryPrice.toFixed(2)}</p>
@@ -39,13 +41,21 @@ class Cart extends React.Component {
   render() {
     return (
       <div className="cart">
-        <div
+        <Link
+          to={{
+            pathname: "/shipping",
+            state: {
+              cart: this.props.cart,
+              subTot: parseFloat(this.props.calcSubTot()),
+              deliveryPrice: parseFloat(this.props.deliveryPrice)
+            }
+          }}
           className={`btn validate-cart ${
             this.props.cart.length > 0 ? "validable" : ""
           }`}
         >
           Valider mon panier
-        </div>
+        </Link>
         {this.renderCartContent()}
       </div>
     );

@@ -47,6 +47,8 @@
 }
 
 .validate-cart {
+  display: block;
+  cursor: default;
   background-color: #a1a1a1;
   border-bottom: 1px solid var(--border-grey);
   font-size: 18px;
@@ -58,6 +60,11 @@
 
 .validable {
   background-color: var(--deliveroo-blue);
+}
+
+.validable:hover {
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 .item-counter {

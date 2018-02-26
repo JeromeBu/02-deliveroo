@@ -28,7 +28,7 @@ class MenuInLineAndCart extends React.Component {
   render() {
     return [
       <div id="menu-spacer" key="menu-spacer" />,
-      <div id="menu-and-cart" key="menu-spacer">
+      <div id="menu-and-cart" key="menu-spacer-bis">
         <div className="container position-relative">
           <MenuInLine titles={this.props.titles} />
           <Cart
