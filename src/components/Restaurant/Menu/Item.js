@@ -24,6 +24,7 @@ class Item extends React.Component {
         onClick={() => this.handleClick(item)}
       >
         <div className={`${num > 0 ? "item-in-cart" : ""} colored-side`} />
+        {/* <div className="spacer-colored"> */}
         <div className="infos flex1">
           <h3>
             <span className="item-number">{num > 0 ? num + " x " : ""}</span>{" "}
