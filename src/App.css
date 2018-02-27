@@ -95,3 +95,9 @@ h2 {
   opacity: 0.9;
   cursor: pointer;
 }
+
+.shipping-formik {
+  background-color: white;
+  padding: 30px;
+  width: 600px;
+}

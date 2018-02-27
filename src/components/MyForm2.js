@@ -1,28 +1,16 @@
+// Helper styles for demo
+import "./MyForm.css";
+
 import React from "react";
+// import { render } from "react-dom";
 import { Formik } from "formik";
 import Yup from "yup";
-import "../MyForm.css";
 
-class ShippingForm extends React.Component {
+class MyFormikForm extends React.Component {
   state = {
     isLoading: true,
     inputs: [],
     inputValues: {}
-  };
-
-  handleClick = () => {
-    const inputValues = this.state.inputValues;
-    Object.keys(inputValues).forEach(key => {
-      console.log(key, ": ", inputValues[key]);
-    });
-  };
-
-  handleChange = event => {
-    const newInputValues = { ...this.state.inputValues };
-    newInputValues[event.target.id] = event.target.value;
-    this.setState({
-      inputValues: newInputValues
-    });
   };
 
   componentDidMount() {
@@ -44,19 +32,15 @@ class ShippingForm extends React.Component {
   renderForm() {
     // const inputs = this.state.inputs.map((input, index) => {
     return (
-      <div className="shipping-form">
+      <div className="formik-form">
+        <h1>Basic Formik 2 Demo</h1>
         <Formik
-          initialValues={{ email: "", street_address: "" }}
+          initialValues={{ email: "" }}
           validationSchema={Yup.object().shape({
             email: Yup.string()
               .email("Invalid email address")
               .required("Email is required!"),
-            name: Yup.string().required("Name is required"),
-            phone: Yup.string()
-              .min(3, "3 letters minimum")
-              .required("Phone is required"),
-            flat: Yup.string().required("Flat is required"),
-            street_address: Yup.string().required("Address is required")
+            name: Yup.string().required("Name is required")
           })}
           onSubmit={(values, actions) => {
             setTimeout(() => {
@@ -76,8 +60,7 @@ class ShippingForm extends React.Component {
             handleReset
           }) => {
             const inputs = this.state.inputs.map((input, index) => {
-              console.log(input.name, "values", values[input.name]);
-              // console.log("values[name]", values[name]);
+              console.log("values", values);
               return (
                 <div
                   key={index}
@@ -91,48 +74,31 @@ class ShippingForm extends React.Component {
                     id={input.name}
                     placeholder={input.placeholder}
                     type="text"
-                    value={values[input.name]}
+                    value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
-                      errors[input.name] && touched[input.name]
+                      errors.name && touched.name
                         ? "text-input error"
                         : "text-input"
                     }
                   />
-                  {errors[input.name] &&
-                    touched[input.name] && (
-                      <div className="input-feedback">{errors[input.name]}</div>
+                  {errors.name &&
+                    touched.name && (
+                      <div className="input-feedback">{errors.name}</div>
                     )}
                   <br />
                 </div>
               );
             });
-            console.log("inputs shipping form", inputs);
+            console.log("inputs1", inputs);
             return (
               <form
                 onSubmit={handleSubmit}
                 className="shipping-formik flex-container flex-wrap"
               >
                 {inputs}
-
-                <div style={{ width: "100%" }}>
-                  <hr />
-                  <p>Votre commande arrivera dans 15 à 25 minutes</p>
-                  <hr />
-                  <div className="btn" onClick={this.handleClick}>
-                    Valider la commande
-                  </div>
-                  <button type="submit" disabled={isSubmitting}>
-                    Submit
-                  </button>
-                  {console.log("values:", values)}
-                  {console.log("touched:", touched)}
-                  {console.log("errors:", errors)}
-                  {console.log("dirty:", dirty)}
-                  {console.log("isSubmitting:", isSubmitting)}
-                </div>
-                {/* <button
+                <button
                   type="button"
                   className="outline"
                   onClick={handleReset}
@@ -140,7 +106,9 @@ class ShippingForm extends React.Component {
                 >
                   Reset
                 </button>
-                */}
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
               </form>
             );
           }}
@@ -158,4 +126,4 @@ class ShippingForm extends React.Component {
   }
 }
 
-export default ShippingForm;
+export default MyFormikForm;
