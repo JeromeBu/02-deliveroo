@@ -47,7 +47,6 @@ class ShippingForm extends React.Component {
           className="input-block"
         >
           <label htmlFor={input.name}>{input.title}</label>
-          <br />
           <input
             id={input.name}
             type="text"
@@ -70,6 +69,7 @@ class ShippingForm extends React.Component {
         {this.renderForm()}
         <hr />
         <p>Votre commande arrivera dans 15 à 25 minutes</p>
+        <hr />
         <div className="btn" onClick={this.handleClick}>
           Valider la commande
         </div>

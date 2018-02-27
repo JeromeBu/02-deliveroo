@@ -3,8 +3,17 @@ import ItemInCart from "../Restaurant/MenuInLineAndCart/ItemInCart";
 
 class ShippingCart extends React.Component {
   render() {
-    console.log("cart", this.props.cart);
-    console.log(this.props.cart[0]);
+    if (!this.props.cart || this.props.cart <= 0) {
+      return (
+        <div className="cart">
+          <div className="cart-content">
+            {" "}
+            <p>Your cart is empty</p>
+          </div>
+        </div>
+      );
+    }
+
     const items = this.props.cart.map((item, index) => {
       return (
         <ItemInCart
@@ -36,7 +45,6 @@ class ShippingCart extends React.Component {
             </p>
           </div>
         </div>
-        {/* {this.renderCartContent()} */}
       </div>
     );
   }

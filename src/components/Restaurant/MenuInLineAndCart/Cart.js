@@ -40,7 +40,7 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <div className="cart">
+      <div className="cart cart-fixed ">
         <Link
           to={{
             pathname: "/shipping",
@@ -50,7 +50,7 @@ class Cart extends React.Component {
               deliveryPrice: parseFloat(this.props.deliveryPrice)
             }
           }}
-          className={`btn validate-cart ${
+          className={`validate-cart ${
             this.props.cart.length > 0 ? "validable" : ""
           }`}
         >

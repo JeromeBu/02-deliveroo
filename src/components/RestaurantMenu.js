@@ -4,7 +4,7 @@ import data from "../data/data";
 import NavBar from "../components/NavBar/NavBar";
 import Restaurant from "../components/Restaurant/Restaurant";
 
-class App extends React.Component {
+class RestaurantMenu extends React.Component {
   state = {
     deliveryPrice: 2.5,
     cart: []
@@ -98,4 +98,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default RestaurantMenu;
