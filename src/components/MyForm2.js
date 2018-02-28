@@ -91,7 +91,7 @@ class MyFormikForm extends React.Component {
                 </div>
               );
             });
-            console.log("inputs1", inputs);
+            console.log("inputs from 2", inputs);
             return (
               <form
                 onSubmit={handleSubmit}
