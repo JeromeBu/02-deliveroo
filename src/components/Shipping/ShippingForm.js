@@ -1,48 +1,50 @@
-import React from "react";
-import { Formik } from "formik";
-import Yup from "yup";
-import "../MyForm.css";
+import React from "react"
+import { Formik } from "formik"
+import Yup from "yup"
+import "../MyForm.css"
+import Checkout from "../Checkout/Checkout"
 
 class ShippingForm extends React.Component {
   state = {
     isLoading: true,
     inputs: [],
     inputValues: {}
-  };
+  }
 
   handleClick = () => {
-    const inputValues = this.state.inputValues;
+    const inputValues = this.state.inputValues
     Object.keys(inputValues).forEach(key => {
-      console.log(key, ": ", inputValues[key]);
-    });
-  };
+      console.log(key, ": ", inputValues[key])
+    })
+  }
 
   handleChange = event => {
-    const newInputValues = { ...this.state.inputValues };
-    newInputValues[event.target.id] = event.target.value;
+    const newInputValues = { ...this.state.inputValues }
+    newInputValues[event.target.id] = event.target.value
     this.setState({
       inputValues: newInputValues
-    });
-  };
+    })
+  }
 
   componentDidMount() {
     fetch(
       "https://lereacteurapp.s3.amazonaws.com/react/deliveroo/deliveroo-shipping-form.json"
     )
       .then(response => {
-        return response.json();
+        return response.json()
       })
       .then(json => {
-        console.log(json);
+        console.log(json)
         this.setState({
           inputs: json,
           isLoading: false
-        });
-      });
+        })
+      })
   }
 
   renderForm() {
     // const inputs = this.state.inputs.map((input, index) => {
+    console.log("Inputs :", this.state.inputs)
     return (
       <div className="shipping-form">
         <Formik
@@ -60,9 +62,9 @@ class ShippingForm extends React.Component {
           })}
           onSubmit={(values, actions) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }, 1000);
+              alert(JSON.stringify(values, null, 2))
+              actions.setSubmitting(false)
+            }, 1000)
           }}
           render={({
             values,
@@ -76,7 +78,7 @@ class ShippingForm extends React.Component {
             handleReset
           }) => {
             const inputs = this.state.inputs.map((input, index) => {
-              console.log(input.name, "values", values[input.name]);
+              console.log(input.name, "values", values[input.name])
               // console.log("values[name]", values[name]);
               return (
                 <div
@@ -106,9 +108,8 @@ class ShippingForm extends React.Component {
                     )}
                   <br />
                 </div>
-              );
-            });
-            console.log("inputs shipping form", inputs);
+              )
+            })
             return (
               <form
                 onSubmit={handleSubmit}
@@ -117,45 +118,25 @@ class ShippingForm extends React.Component {
                 {inputs}
 
                 <div style={{ width: "100%" }}>
-                  <hr />
-                  <p>Votre commande arrivera dans 15 à 25 minutes</p>
-                  <hr />
-                  <div className="btn" onClick={this.handleClick}>
-                    Valider la commande
-                  </div>
                   <button type="submit" disabled={isSubmitting}>
                     Submit
                   </button>
-                  {console.log("values:", values)}
-                  {console.log("touched:", touched)}
-                  {console.log("errors:", errors)}
-                  {console.log("dirty:", dirty)}
-                  {console.log("isSubmitting:", isSubmitting)}
                 </div>
-                {/* <button
-                  type="button"
-                  className="outline"
-                  onClick={handleReset}
-                  disabled={!dirty || isSubmitting}
-                >
-                  Reset
-                </button>
-                */}
               </form>
-            );
+            )
           }}
         />
       </div>
-    );
+    )
   }
 
   render() {
     if (this.state.isLoading === true) {
-      return <p>Chargement du formulaire ...</p>;
+      return <p>Chargement du formulaire ...</p>
     } else {
-      return this.renderForm();
+      return this.renderForm()
     }
   }
 }
 
-export default ShippingForm;
+export default ShippingForm
